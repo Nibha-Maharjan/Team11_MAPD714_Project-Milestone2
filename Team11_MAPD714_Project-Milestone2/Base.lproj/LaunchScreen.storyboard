@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Launch Screen" translatesAutoresizingMaskIntoConstraints="NO" id="AdM-dh-HvW">
+                                <rect key="frame" x="-17" y="-46" width="433" height="928"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="945" id="9Na-gv-6cu"/>
+                                    <constraint firstAttribute="width" constant="403" id="GqM-Qo-bMd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="423" id="Wat-qF-qbz"/>
+                                    <constraint firstAttribute="height" constant="852" id="gd1-14-zB9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Centen Cruise Inc. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSe-cT-4pc">
+                                <rect key="frame" x="45" y="221" width="309" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="2mf-C6-2Oh"/>
+                                    <constraint firstAttribute="width" constant="309" id="Esu-5e-H4B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
+                                <color key="textColor" red="1" green="0.99591724130000003" blue="0.92682022949999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="cruising made simple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkD-0c-zca">
+                                <rect key="frame" x="122" y="276" width="154" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="JYS-Kj-tDi"/>
+                                    <constraint firstAttribute="height" constant="21" id="mDp-HK-UrQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="16"/>
+                                <color key="textColor" red="1" green="0.91386095290000002" blue="0.82924838919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="AdM-dh-HvW" secondAttribute="bottom" constant="-47" id="20r-MT-5ku"/>
+                            <constraint firstAttribute="trailing" secondItem="AdM-dh-HvW" secondAttribute="trailing" constant="-13" id="84r-Kp-oNY"/>
+                            <constraint firstItem="KkD-0c-zca" firstAttribute="top" secondItem="rSe-cT-4pc" secondAttribute="bottom" constant="8" symbolic="YES" id="8Wy-Jh-v7a"/>
+                            <constraint firstItem="AdM-dh-HvW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-17" id="BYq-lA-ndi"/>
+                            <constraint firstItem="AdM-dh-HvW" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-46" id="CoT-fp-nzO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rSe-cT-4pc" secondAttribute="trailing" constant="26" id="DNd-hM-FnW"/>
+                            <constraint firstItem="rSe-cT-4pc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="26" id="HbD-VL-HuU"/>
+                            <constraint firstItem="rSe-cT-4pc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="215" id="bp9-Cq-joR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rSe-cT-4pc" secondAttribute="trailing" constant="26" id="eqp-4u-Gcd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KkD-0c-zca" secondAttribute="trailing" constant="105" id="jC4-e8-Ep2"/>
+                            <constraint firstItem="rSe-cT-4pc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="215" id="jMM-qO-8t1"/>
+                            <constraint firstItem="KkD-0c-zca" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="102" id="qpg-Ej-Vl3"/>
+                            <constraint firstItem="rSe-cT-4pc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="26" id="tOQ-z2-cJ2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Launch Screen" width="353.66665649414062" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

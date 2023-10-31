@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "lone-yacht-with-super-full-moon-ai-generated-image.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "lone-yacht-with-super-full-moon-ai-generated-image 1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "lone-yacht-with-super-full-moon-ai-generated-image 2.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
