@@ -10,7 +10,7 @@
 // Nibha Maharjan - 301282952
 //
 // Project- 1
-// Milestone - 2
+// Milestone - 3
 //
 // This is project on Cruise booking app. We have to create UI and functionality from scratch using everything we
 // learned in class and other resources found via books or online.

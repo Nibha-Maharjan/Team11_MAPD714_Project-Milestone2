@@ -9,7 +9,7 @@
 // Nibha Maharjan - 301282952
 //
 // Project- 1
-// Milestone - 2
+// Milestone - 3
 //
 // This is project on Cruise booking app. We have to create UI and functionality from scratch using everything we
 // learned in class and other resources found via books or online.
@@ -36,7 +36,7 @@ class SearchTabViewController: UIViewController {
     
     //dummy cruise data list
     
-    var cruiseData = ["Bahamas", "Carribean", "Cuba", "Sampler", "Star"]
+    var cruiseData = ["Bahamas Cruise", "Carribean Cruise", "Cuba Cruise", "Sampler Cruise", "Star Cruise"]
     
     var filteredData: [String]!
     
@@ -71,6 +71,9 @@ extension SearchTabViewController: UITableViewDelegate, UITableViewDataSource{
         cell.textLabel?.text = filteredData[indexPath.row]
         return cell
     }
+    
+    
+    
 }
 
 extension SearchTabViewController: UISearchBarDelegate{

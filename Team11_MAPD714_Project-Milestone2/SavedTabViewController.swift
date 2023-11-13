@@ -9,7 +9,7 @@
 // Nibha Maharjan - 301282952
 //
 // Project- 1
-// Milestone - 2
+// Milestone - 3
 //
 // This is project on Cruise booking app. We have to create UI and functionality from scratch using everything we
 // learned in class and other resources found via books or online.
@@ -20,18 +20,40 @@
 // there are individual pages for cruises.
 
 
-// after the use of database the saved cruises will be shown in saved view controller.
 
 
 import UIKit
+import WebKit
 
 class SavedTabViewController: UIViewController {
 
+    //define a webview control object
+    let wview = WKWebView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //add the object into view
+        view.addSubview(wview)
+        
+        //define the url object with the website/domaain name
+        guard let url = URL(string: "https://www.cruisetraveloutlet.com/blog/best-cruise-destinations-in-the-world/")
+        else{
+            return
+        }
+        
+        //load the url into web view control
+        wview.load(URLRequest(url: url))
+        
         
     }
     
+    //initializing web view to the screen
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        wview.frame = view.bounds
+    }
+
 
 }

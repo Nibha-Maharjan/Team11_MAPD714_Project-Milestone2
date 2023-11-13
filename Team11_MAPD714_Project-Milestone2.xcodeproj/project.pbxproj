@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E025E2A02B00686800BE92D2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E29F2B00686800BE92D2 /* CustomTableViewCell.swift */; };
+		E025E2A22B01651A00BE92D2 /* CustomDealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E2A12B01651A00BE92D2 /* CustomDealsTableViewCell.swift */; };
+		E025E2A42B01773500BE92D2 /* BahamasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E2A32B01773500BE92D2 /* BahamasViewController.swift */; };
+		E025E2A62B01774A00BE92D2 /* CaribbeanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E2A52B01774A00BE92D2 /* CaribbeanViewController.swift */; };
+		E025E2A82B01776000BE92D2 /* CubaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E2A72B01776000BE92D2 /* CubaViewController.swift */; };
+		E025E2AA2B01776E00BE92D2 /* SamplerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E2A92B01776E00BE92D2 /* SamplerViewController.swift */; };
+		E025E2AC2B01777C00BE92D2 /* StarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E2AB2B01777C00BE92D2 /* StarViewController.swift */; };
+		E025E2B82B018F7B00BE92D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E025E2B72B018F7B00BE92D2 /* Main.storyboard */; };
+		E025E2BA2B01C84500BE92D2 /* PassengerCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E2B92B01C84500BE92D2 /* PassengerCountViewController.swift */; };
+		E025E2BC2B01C87700BE92D2 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E2BB2B01C87700BE92D2 /* PaymentViewController.swift */; };
+		E025E2BE2B01C8A300BE92D2 /* OutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025E2BD2B01C8A300BE92D2 /* OutputViewController.swift */; };
 		E05FF7BD2AEEAF210038EB5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF7BC2AEEAF210038EB5A /* AppDelegate.swift */; };
 		E05FF7BF2AEEAF210038EB5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF7BE2AEEAF210038EB5A /* SceneDelegate.swift */; };
 		E05FF7C12AEEAF210038EB5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF7C02AEEAF210038EB5A /* ViewController.swift */; };
-		E05FF7C42AEEAF210038EB5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05FF7C22AEEAF210038EB5A /* Main.storyboard */; };
 		E05FF7C62AEEAF240038EB5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E05FF7C52AEEAF240038EB5A /* Assets.xcassets */; };
 		E05FF7C92AEEAF240038EB5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E05FF7C72AEEAF240038EB5A /* LaunchScreen.storyboard */; };
 		E05FF7D12AEEB8AE0038EB5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF7D02AEEB8AE0038EB5A /* HomeViewController.swift */; };
@@ -24,11 +34,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E025E29F2B00686800BE92D2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		E025E2A12B01651A00BE92D2 /* CustomDealsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDealsTableViewCell.swift; sourceTree = "<group>"; };
+		E025E2A32B01773500BE92D2 /* BahamasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BahamasViewController.swift; sourceTree = "<group>"; };
+		E025E2A52B01774A00BE92D2 /* CaribbeanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaribbeanViewController.swift; sourceTree = "<group>"; };
+		E025E2A72B01776000BE92D2 /* CubaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubaViewController.swift; sourceTree = "<group>"; };
+		E025E2A92B01776E00BE92D2 /* SamplerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerViewController.swift; sourceTree = "<group>"; };
+		E025E2AB2B01777C00BE92D2 /* StarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarViewController.swift; sourceTree = "<group>"; };
+		E025E2B72B018F7B00BE92D2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E025E2B92B01C84500BE92D2 /* PassengerCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerCountViewController.swift; sourceTree = "<group>"; };
+		E025E2BB2B01C87700BE92D2 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		E025E2BD2B01C8A300BE92D2 /* OutputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputViewController.swift; sourceTree = "<group>"; };
 		E05FF7B92AEEAF210038EB5A /* Team11_MAPD714_Project-Milestone2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team11_MAPD714_Project-Milestone2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05FF7BC2AEEAF210038EB5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E05FF7BE2AEEAF210038EB5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E05FF7C02AEEAF210038EB5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E05FF7C32AEEAF210038EB5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E05FF7C52AEEAF240038EB5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E05FF7C82AEEAF240038EB5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E05FF7CA2AEEAF240038EB5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,7 +95,6 @@
 				E05FF7BC2AEEAF210038EB5A /* AppDelegate.swift */,
 				E05FF7BE2AEEAF210038EB5A /* SceneDelegate.swift */,
 				E05FF7C02AEEAF210038EB5A /* ViewController.swift */,
-				E05FF7C22AEEAF210038EB5A /* Main.storyboard */,
 				E0AA76852AF02FE90022613A /* ContactUsViewController.swift */,
 				E0AA767D2AF021570022613A /* DealsTabViewController.swift */,
 				E0AA767F2AF021670022613A /* SearchTabViewController.swift */,
@@ -84,9 +103,20 @@
 				E05FF7D02AEEB8AE0038EB5A /* HomeViewController.swift */,
 				E05FF7D22AEEB8C90038EB5A /* LoginViewController.swift */,
 				E05FF7D42AEEB8D90038EB5A /* RegistrationViewController.swift */,
+				E025E29F2B00686800BE92D2 /* CustomTableViewCell.swift */,
+				E025E2A12B01651A00BE92D2 /* CustomDealsTableViewCell.swift */,
+				E025E2B72B018F7B00BE92D2 /* Main.storyboard */,
 				E05FF7C52AEEAF240038EB5A /* Assets.xcassets */,
 				E05FF7C72AEEAF240038EB5A /* LaunchScreen.storyboard */,
 				E05FF7CA2AEEAF240038EB5A /* Info.plist */,
+				E025E2A32B01773500BE92D2 /* BahamasViewController.swift */,
+				E025E2A52B01774A00BE92D2 /* CaribbeanViewController.swift */,
+				E025E2A72B01776000BE92D2 /* CubaViewController.swift */,
+				E025E2A92B01776E00BE92D2 /* SamplerViewController.swift */,
+				E025E2AB2B01777C00BE92D2 /* StarViewController.swift */,
+				E025E2B92B01C84500BE92D2 /* PassengerCountViewController.swift */,
+				E025E2BB2B01C87700BE92D2 /* PaymentViewController.swift */,
+				E025E2BD2B01C8A300BE92D2 /* OutputViewController.swift */,
 			);
 			path = "Team11_MAPD714_Project-Milestone2";
 			sourceTree = "<group>";
@@ -149,9 +179,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E025E2B82B018F7B00BE92D2 /* Main.storyboard in Resources */,
 				E05FF7C92AEEAF240038EB5A /* LaunchScreen.storyboard in Resources */,
 				E05FF7C62AEEAF240038EB5A /* Assets.xcassets in Resources */,
-				E05FF7C42AEEAF210038EB5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,29 +194,31 @@
 			files = (
 				E05FF7D52AEEB8D90038EB5A /* RegistrationViewController.swift in Sources */,
 				E05FF7C12AEEAF210038EB5A /* ViewController.swift in Sources */,
+				E025E2A22B01651A00BE92D2 /* CustomDealsTableViewCell.swift in Sources */,
+				E025E2AA2B01776E00BE92D2 /* SamplerViewController.swift in Sources */,
 				E05FF7BD2AEEAF210038EB5A /* AppDelegate.swift in Sources */,
 				E05FF7BF2AEEAF210038EB5A /* SceneDelegate.swift in Sources */,
 				E05FF7D32AEEB8C90038EB5A /* LoginViewController.swift in Sources */,
+				E025E2BE2B01C8A300BE92D2 /* OutputViewController.swift in Sources */,
+				E025E2BC2B01C87700BE92D2 /* PaymentViewController.swift in Sources */,
 				E0AA767E2AF021570022613A /* DealsTabViewController.swift in Sources */,
+				E025E2A02B00686800BE92D2 /* CustomTableViewCell.swift in Sources */,
 				E0AA76802AF021670022613A /* SearchTabViewController.swift in Sources */,
 				E0AA76822AF021CE0022613A /* SavedTabViewController.swift in Sources */,
 				E05FF7D12AEEB8AE0038EB5A /* HomeViewController.swift in Sources */,
 				E0AA76842AF021DC0022613A /* AccountTabViewController.swift in Sources */,
+				E025E2A42B01773500BE92D2 /* BahamasViewController.swift in Sources */,
+				E025E2A82B01776000BE92D2 /* CubaViewController.swift in Sources */,
+				E025E2BA2B01C84500BE92D2 /* PassengerCountViewController.swift in Sources */,
 				E0AA76862AF02FE90022613A /* ContactUsViewController.swift in Sources */,
+				E025E2AC2B01777C00BE92D2 /* StarViewController.swift in Sources */,
+				E025E2A62B01774A00BE92D2 /* CaribbeanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E05FF7C22AEEAF210038EB5A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E05FF7C32AEEAF210038EB5A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E05FF7C72AEEAF240038EB5A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
