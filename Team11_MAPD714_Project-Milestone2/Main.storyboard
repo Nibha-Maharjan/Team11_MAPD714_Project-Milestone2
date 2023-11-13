@@ -383,6 +383,8 @@
                     </view>
                     <connections>
                         <outlet property="cruiseSelectedPassengerCountLbl" destination="ixc-cf-yeD" id="Ndm-dZ-liJ"/>
+                        <outlet property="numberTextField" destination="2oq-cr-THc" id="Yqd-er-EeW"/>
+                        <outlet property="numberTextField2" destination="Be5-kB-5wr" id="cxv-89-0Qz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9d7-nL-HLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -494,7 +496,7 @@
                                         </segments>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaU-tt-Xrn">
-                                        <rect key="frame" x="262" y="768" width="156" height="35"/>
+                                        <rect key="frame" x="213" y="674" width="156" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Confirm Payment"/>
@@ -509,6 +511,13 @@
                         <viewLayoutGuide key="safeArea" id="vgz-af-abZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="Address" destination="HfN-Q4-iXE" id="FJU-4b-ysq"/>
+                        <outlet property="Fullname" destination="AZO-cn-MQM" id="QhI-oO-BkK"/>
+                        <outlet property="TextFieldTres" destination="vJ9-l6-aQb" id="Blz-eL-jbS"/>
+                        <outlet property="TextFieldTwo" destination="YgA-Ma-hMN" id="5QF-pV-2pR"/>
+                        <outlet property="TextFieldWan" destination="Mcc-W4-r5D" id="HCX-Ol-LB8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qft-nI-1wZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -605,6 +614,16 @@
                         <viewLayoutGuide key="safeArea" id="mC3-sc-AZw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="cusAdd" destination="3gW-Hc-VuA" id="dNJ-z1-0mz"/>
+                        <outlet property="cusCruise" destination="DP5-rk-Ddo" id="V5I-Yj-XeR"/>
+                        <outlet property="cusDuration" destination="o3G-O1-Hy7" id="5fa-5U-m5v"/>
+                        <outlet property="cusGuest" destination="MKH-eD-gek" id="ZjY-cG-2I7"/>
+                        <outlet property="cusName" destination="2bE-ZI-qbb" id="6vV-vf-I0Q"/>
+                        <outlet property="cusNight" destination="SGL-Pm-Y4h" id="Bzv-Gj-6if"/>
+                        <outlet property="cusPlace" destination="0LK-mz-5SV" id="0gQ-Xl-s5G"/>
+                        <outlet property="cusPrice" destination="mlr-kf-ZDr" id="XVj-Wb-9Gn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K37-K4-ctI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

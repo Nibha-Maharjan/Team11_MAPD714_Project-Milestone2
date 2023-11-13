@@ -7,9 +7,11 @@
 
 import UIKit
 
-class PassengerCountViewController: UIViewController {
+class PassengerCountViewController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var numberTextField: UITextField!
     
+    @IBOutlet weak var numberTextField2: UITextField!
     @IBOutlet weak var cruiseSelectedPassengerCountLbl: UILabel!
     
     
@@ -20,17 +22,33 @@ class PassengerCountViewController: UIViewController {
         super.viewDidLoad()
 
         cruiseSelectedPassengerCountLbl.text = "You have selected:  \(CruiseLbldata)"
+        numberTextField.delegate = self
+        numberTextField2.delegate = self
     }
-    
+   
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // For mobile number validation
+        let allowedCharacters = CharacterSet(charactersIn: "+0123456789 ") // Change this based on your requirement
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
 
     @IBAction func buttonClickedPersonCountNext(_ sender: UIButton) {
+        let a=Int(numberTextField.text!)
+        let b=Int(numberTextField2.text!)
+        var TotalGuest=a!+b!
+        let control=storyboard?.instantiateViewController(withIdentifier: "PaymentViewController")as!PaymentViewController
+                    
         
-        let dataSndCount = self.storyboard?.instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
-
+                    //pass data from first view to second view
+        control.NoGuest=String(TotalGuest)
         
-        self.navigationController?.pushViewController(dataSndCount, animated: true)
+    
+                    
+                    present(control, animated: true)
+}
         
     }
     
 
-}
+
