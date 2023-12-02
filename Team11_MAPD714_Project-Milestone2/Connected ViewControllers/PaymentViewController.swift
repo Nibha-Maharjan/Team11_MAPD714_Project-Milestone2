@@ -9,7 +9,7 @@
 // Nibha Maharjan - 301282952
 //
 // Project- 1
-// Milestone - 3
+// Milestone - 4
 //
 // This is project on Cruise booking app. We have to create UI and functionality from scratch using everything we
 // learned in class and other resources found via books or online.
@@ -25,10 +25,16 @@ class PaymentViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var TextFieldTres: UITextField!
     @IBOutlet weak var Fullname: UITextField!
     @IBOutlet weak var Address: UITextField!
+    @IBOutlet weak var totalAmountLbl: UILabel!
     var NoGuest: String?
+    
+    var CruisePriceTotal = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        totalAmountLbl.text = " \(CruisePriceTotal)"
         TextFieldWan.delegate = self
         TextFieldTwo.delegate = self
         TextFieldTres.delegate = self
@@ -46,6 +52,7 @@ class PaymentViewController: UIViewController,UITextFieldDelegate {
                     
                 
                     //pass data from first view to second view
+        
         control.GuestNum=NoGuest
         control.GuestName=Fullname.text
         control.GuestAdd=Address.text

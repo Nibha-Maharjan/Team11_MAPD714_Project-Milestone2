@@ -1,15 +1,15 @@
 //
-//  LoginViewController.swift
+//  AccountTabViewController.swift
 //  Team11_MAPD714_Project-Milestone2
 //
-//  Created by SAURAV on 2023-10-29.
+//  Created by SAURAV on 2023-10-30.
 //
 // Team 11
 // Saurav Gautam - 301286980
 // Nibha Maharjan - 301282952
 //
 // Project- 1
-// Milestone - 3
+// Milestone - 4
 //
 // This is project on Cruise booking app. We have to create UI and functionality from scratch using everything we
 // learned in class and other resources found via books or online.
@@ -21,18 +21,20 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class AccountTabViewController: UIViewController {
 
-    //UI elements - Email and Password text fields
-    @IBOutlet weak var loginEmail: UITextField!
-    @IBOutlet weak var loginPassword: UITextField!
-    
+    @IBOutlet weak var fullNameLabelAccount: UILabel!
+    @IBOutlet weak var addressLabelAccount: UILabel!
+    //@IBOutlet weak var profileInfoTableView: UITableView!
+
+    // ClientsDBManager database instance
+    var clientsDBManager = ClientsDBManager()
+    var customersArray = [RegistrationDB]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-    
-// button to login - after database implementation
-   
+    }
 
-}
+    
+

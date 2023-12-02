@@ -26,6 +26,14 @@
 		E05FF7D12AEEB8AE0038EB5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF7D02AEEB8AE0038EB5A /* HomeViewController.swift */; };
 		E05FF7D32AEEB8C90038EB5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF7D22AEEB8C90038EB5A /* LoginViewController.swift */; };
 		E05FF7D52AEEB8D90038EB5A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05FF7D42AEEB8D90038EB5A /* RegistrationViewController.swift */; };
+		E074CD192B1A9817005A2193 /* BookingDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E074CD182B1A9817005A2193 /* BookingDBManager.swift */; };
+		E08561F82B0BB7A1008BB70E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E08561F72B0BB7A1008BB70E /* libsqlite3.tbd */; };
+		E08562172B126C40008BB70E /* RegistrationDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08562162B126C40008BB70E /* RegistrationDB.swift */; };
+		E08562192B12720F008BB70E /* ClientsDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08562182B12720F008BB70E /* ClientsDBManager.swift */; };
+		E085621B2B155EC5008BB70E /* BookingDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E085621A2B155EC5008BB70E /* BookingDB.swift */; };
+		E085621F2B17B9E2008BB70E /* CruiseInfoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E085621E2B17B9E2008BB70E /* CruiseInfoDB.swift */; };
+		E08562212B17BA3F008BB70E /* CruiseInfoDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08562202B17BA3F008BB70E /* CruiseInfoDBManager.swift */; };
+		E08562232B180540008BB70E /* UpdateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08562222B180540008BB70E /* UpdateAccountViewController.swift */; };
 		E0AA767E2AF021570022613A /* DealsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AA767D2AF021570022613A /* DealsTabViewController.swift */; };
 		E0AA76802AF021670022613A /* SearchTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AA767F2AF021670022613A /* SearchTabViewController.swift */; };
 		E0AA76822AF021CE0022613A /* SavedTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AA76812AF021CE0022613A /* SavedTabViewController.swift */; };
@@ -55,6 +63,14 @@
 		E05FF7D02AEEB8AE0038EB5A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E05FF7D22AEEB8C90038EB5A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E05FF7D42AEEB8D90038EB5A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		E074CD182B1A9817005A2193 /* BookingDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDBManager.swift; sourceTree = "<group>"; };
+		E08561F72B0BB7A1008BB70E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E08562162B126C40008BB70E /* RegistrationDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDB.swift; sourceTree = "<group>"; };
+		E08562182B12720F008BB70E /* ClientsDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsDBManager.swift; sourceTree = "<group>"; };
+		E085621A2B155EC5008BB70E /* BookingDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDB.swift; sourceTree = "<group>"; };
+		E085621E2B17B9E2008BB70E /* CruiseInfoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseInfoDB.swift; sourceTree = "<group>"; };
+		E08562202B17BA3F008BB70E /* CruiseInfoDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseInfoDBManager.swift; sourceTree = "<group>"; };
+		E08562222B180540008BB70E /* UpdateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountViewController.swift; sourceTree = "<group>"; };
 		E0AA767D2AF021570022613A /* DealsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsTabViewController.swift; sourceTree = "<group>"; };
 		E0AA767F2AF021670022613A /* SearchTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabViewController.swift; sourceTree = "<group>"; };
 		E0AA76812AF021CE0022613A /* SavedTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTabViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08561F82B0BB7A1008BB70E /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +95,8 @@
 			children = (
 				E05FF7BB2AEEAF210038EB5A /* Team11_MAPD714_Project-Milestone2 */,
 				E05FF7BA2AEEAF210038EB5A /* Products */,
+				E08561F62B0BB7A1008BB70E /* Frameworks */,
+				E08562242B1946FA008BB70E /* backup */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,33 +111,111 @@
 		E05FF7BB2AEEAF210038EB5A /* Team11_MAPD714_Project-Milestone2 */ = {
 			isa = PBXGroup;
 			children = (
-				E05FF7BC2AEEAF210038EB5A /* AppDelegate.swift */,
+				E08562132B1265B1008BB70E /* database */,
+				E08561F02B0BB59B008BB70E /* Main View Controllers */,
+				E08561F22B0BB65D008BB70E /* login and registration viewcontrollers */,
+				E08561F12B0BB5E2008BB70E /* tabs view controllers */,
+				E08561F42B0BB6AB008BB70E /* Cruises ViewControllers */,
+				E08561F52B0BB6D3008BB70E /* Connected ViewControllers */,
+				E08561F32B0BB687008BB70E /* custom tableViews */,
+				E025E2B72B018F7B00BE92D2 /* Main.storyboard */,
+				E05FF7C72AEEAF240038EB5A /* LaunchScreen.storyboard */,
+				E05FF7C52AEEAF240038EB5A /* Assets.xcassets */,
+				E05FF7CA2AEEAF240038EB5A /* Info.plist */,
+			);
+			path = "Team11_MAPD714_Project-Milestone2";
+			sourceTree = "<group>";
+		};
+		E08561F02B0BB59B008BB70E /* Main View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				E05FF7BE2AEEAF210038EB5A /* SceneDelegate.swift */,
+				E05FF7BC2AEEAF210038EB5A /* AppDelegate.swift */,
 				E05FF7C02AEEAF210038EB5A /* ViewController.swift */,
-				E0AA76852AF02FE90022613A /* ContactUsViewController.swift */,
+			);
+			path = "Main View Controllers";
+			sourceTree = "<group>";
+		};
+		E08561F12B0BB5E2008BB70E /* tabs view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E05FF7D02AEEB8AE0038EB5A /* HomeViewController.swift */,
 				E0AA767D2AF021570022613A /* DealsTabViewController.swift */,
 				E0AA767F2AF021670022613A /* SearchTabViewController.swift */,
 				E0AA76812AF021CE0022613A /* SavedTabViewController.swift */,
 				E0AA76832AF021DC0022613A /* AccountTabViewController.swift */,
-				E05FF7D02AEEB8AE0038EB5A /* HomeViewController.swift */,
+			);
+			path = "tabs view controllers";
+			sourceTree = "<group>";
+		};
+		E08561F22B0BB65D008BB70E /* login and registration viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
 				E05FF7D22AEEB8C90038EB5A /* LoginViewController.swift */,
 				E05FF7D42AEEB8D90038EB5A /* RegistrationViewController.swift */,
+			);
+			path = "login and registration viewcontrollers";
+			sourceTree = "<group>";
+		};
+		E08561F32B0BB687008BB70E /* custom tableViews */ = {
+			isa = PBXGroup;
+			children = (
 				E025E29F2B00686800BE92D2 /* CustomTableViewCell.swift */,
 				E025E2A12B01651A00BE92D2 /* CustomDealsTableViewCell.swift */,
-				E025E2B72B018F7B00BE92D2 /* Main.storyboard */,
-				E05FF7C52AEEAF240038EB5A /* Assets.xcassets */,
-				E05FF7C72AEEAF240038EB5A /* LaunchScreen.storyboard */,
-				E05FF7CA2AEEAF240038EB5A /* Info.plist */,
+			);
+			path = "custom tableViews";
+			sourceTree = "<group>";
+		};
+		E08561F42B0BB6AB008BB70E /* Cruises ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				E025E2A32B01773500BE92D2 /* BahamasViewController.swift */,
 				E025E2A52B01774A00BE92D2 /* CaribbeanViewController.swift */,
 				E025E2A72B01776000BE92D2 /* CubaViewController.swift */,
 				E025E2A92B01776E00BE92D2 /* SamplerViewController.swift */,
 				E025E2AB2B01777C00BE92D2 /* StarViewController.swift */,
+			);
+			path = "Cruises ViewControllers";
+			sourceTree = "<group>";
+		};
+		E08561F52B0BB6D3008BB70E /* Connected ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E0AA76852AF02FE90022613A /* ContactUsViewController.swift */,
 				E025E2B92B01C84500BE92D2 /* PassengerCountViewController.swift */,
 				E025E2BB2B01C87700BE92D2 /* PaymentViewController.swift */,
 				E025E2BD2B01C8A300BE92D2 /* OutputViewController.swift */,
+				E08562222B180540008BB70E /* UpdateAccountViewController.swift */,
 			);
-			path = "Team11_MAPD714_Project-Milestone2";
+			path = "Connected ViewControllers";
+			sourceTree = "<group>";
+		};
+		E08561F62B0BB7A1008BB70E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E08561F72B0BB7A1008BB70E /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E08562132B1265B1008BB70E /* database */ = {
+			isa = PBXGroup;
+			children = (
+				E08562162B126C40008BB70E /* RegistrationDB.swift */,
+				E08562182B12720F008BB70E /* ClientsDBManager.swift */,
+				E085621E2B17B9E2008BB70E /* CruiseInfoDB.swift */,
+				E08562202B17BA3F008BB70E /* CruiseInfoDBManager.swift */,
+				E085621A2B155EC5008BB70E /* BookingDB.swift */,
+				E074CD182B1A9817005A2193 /* BookingDBManager.swift */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+		E08562242B1946FA008BB70E /* backup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = backup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,23 +290,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				E05FF7D52AEEB8D90038EB5A /* RegistrationViewController.swift in Sources */,
+				E085621B2B155EC5008BB70E /* BookingDB.swift in Sources */,
 				E05FF7C12AEEAF210038EB5A /* ViewController.swift in Sources */,
+				E074CD192B1A9817005A2193 /* BookingDBManager.swift in Sources */,
 				E025E2A22B01651A00BE92D2 /* CustomDealsTableViewCell.swift in Sources */,
 				E025E2AA2B01776E00BE92D2 /* SamplerViewController.swift in Sources */,
+				E08562232B180540008BB70E /* UpdateAccountViewController.swift in Sources */,
 				E05FF7BD2AEEAF210038EB5A /* AppDelegate.swift in Sources */,
 				E05FF7BF2AEEAF210038EB5A /* SceneDelegate.swift in Sources */,
 				E05FF7D32AEEB8C90038EB5A /* LoginViewController.swift in Sources */,
 				E025E2BE2B01C8A300BE92D2 /* OutputViewController.swift in Sources */,
 				E025E2BC2B01C87700BE92D2 /* PaymentViewController.swift in Sources */,
+				E08562212B17BA3F008BB70E /* CruiseInfoDBManager.swift in Sources */,
 				E0AA767E2AF021570022613A /* DealsTabViewController.swift in Sources */,
 				E025E2A02B00686800BE92D2 /* CustomTableViewCell.swift in Sources */,
+				E085621F2B17B9E2008BB70E /* CruiseInfoDB.swift in Sources */,
 				E0AA76802AF021670022613A /* SearchTabViewController.swift in Sources */,
 				E0AA76822AF021CE0022613A /* SavedTabViewController.swift in Sources */,
+				E08562192B12720F008BB70E /* ClientsDBManager.swift in Sources */,
 				E05FF7D12AEEB8AE0038EB5A /* HomeViewController.swift in Sources */,
 				E0AA76842AF021DC0022613A /* AccountTabViewController.swift in Sources */,
 				E025E2A42B01773500BE92D2 /* BahamasViewController.swift in Sources */,
 				E025E2A82B01776000BE92D2 /* CubaViewController.swift in Sources */,
 				E025E2BA2B01C84500BE92D2 /* PassengerCountViewController.swift in Sources */,
+				E08562172B126C40008BB70E /* RegistrationDB.swift in Sources */,
 				E0AA76862AF02FE90022613A /* ContactUsViewController.swift in Sources */,
 				E025E2AC2B01777C00BE92D2 /* StarViewController.swift in Sources */,
 				E025E2A62B01774A00BE92D2 /* CaribbeanViewController.swift in Sources */,
