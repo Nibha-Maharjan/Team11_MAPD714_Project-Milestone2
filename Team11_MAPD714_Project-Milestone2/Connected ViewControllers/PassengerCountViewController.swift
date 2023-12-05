@@ -20,7 +20,7 @@ import UIKit
 class PassengerCountViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Outlets
-    
+
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var ifSeniorSwitch: UISwitch!
     @IBOutlet weak var numberTextField2: UITextField!
@@ -33,16 +33,16 @@ class PassengerCountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var numAdultLbl: UILabel!
 
     // MARK: - Properties
-    
+
     var CruiseLbldata = ""
     var CruisePrice = ""
 
     // MARK: - View Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set up UI initializations
+        // Set initial values and delegates
         setupUI()
 
         // Set up date picker value changed event
@@ -50,8 +50,8 @@ class PassengerCountViewController: UIViewController, UITextFieldDelegate {
     }
 
     // MARK: - UI Setup
-    
-    func setupUI() {
+
+    private func setupUI() {
         cruiseSelectedPassengerCountLbl.text = "You have selected:  \(CruiseLbldata)"
         cruisesIndivPrice.text = " \(CruisePrice)"
         numberTextField.delegate = self
@@ -59,7 +59,7 @@ class PassengerCountViewController: UIViewController, UITextFieldDelegate {
     }
 
     // MARK: - Text Field Delegate
-    
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // For mobile number validation
         let allowedCharacters = CharacterSet(charactersIn: "+0123456789 ") // Change this based on your requirement
@@ -67,12 +67,13 @@ class PassengerCountViewController: UIViewController, UITextFieldDelegate {
         return allowedCharacters.isSuperset(of: characterSet)
     }
 
-    // MARK: - Date Picker Value Changed
-    
+    // MARK: - Date Picker Handling
+
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
+
         dateLbl.text = "Selected Date: \(dateFormatter.string(from: sender.date))"
     }
 
@@ -83,14 +84,7 @@ class PassengerCountViewController: UIViewController, UITextFieldDelegate {
         let b = Int(numberTextField2.text!) ?? 0
         let totalGuest = a + b
         
-        // Retrieve integer value from cruisesIndivPrice
-        guard let cruisePrice = Int(cruisesIndivPrice.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "") else {
-            // Handle the case where cruise price is not a valid integer
-            print("Invalid cruise price format")
-            return
-        }
-        
-        let totalPrice = totalGuest * cruisePrice
+        let totalPrice = totalGuest * (Int(CruisePrice) ?? 0)
         
         // Update UI labels
         numAdultLbl.text = "Number of Adults: \(a)"
@@ -103,7 +97,7 @@ class PassengerCountViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Navigation
 
-    func navigateToPayment(totalGuest: Int, totalPrice: Int) {
+    private func navigateToPayment(totalGuest: Int, totalPrice: Int) {
         let control = storyboard?.instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
 
         // Pass data from the first view to the second view
