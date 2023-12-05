@@ -1487,59 +1487,37 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzy-JE-RDh">
-                                <rect key="frame" x="141" y="479.33333333333331" width="148" height="34.999999999999943"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M9-uE-SN2">
+                                <rect key="frame" x="175" y="488" width="80" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Account"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update"/>
                                 <connections>
-                                    <action selector="updateAccountBtnClicked:" destination="Jhn-b9-6FH" eventType="touchUpInside" id="GAW-Ye-Wtl"/>
-                                    <segue destination="F5X-W9-ZsM" kind="show" id="xjB-sP-Pdf"/>
+                                    <segue destination="F5X-W9-ZsM" kind="show" id="Ctf-mZ-f8p"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="m7b-A5-6zc">
-                                <rect key="frame" x="113" y="350" width="205" height="112"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eF5-Ku-tFw">
-                                        <rect key="frame" x="0.0" y="50" width="205" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eF5-Ku-tFw" id="MUv-9A-aMF">
-                                            <rect key="frame" x="0.0" y="0.0" width="205" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ONV-KL-Ggf"/>
                         <color key="backgroundColor" red="0.0087248608470000006" green="0.042425326999999999" blue="0.19609263539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Mzy-JE-RDh" firstAttribute="top" secondItem="yQK-92-XEz" secondAttribute="bottom" constant="98" id="1XM-vh-NFg"/>
                             <constraint firstItem="yQK-92-XEz" firstAttribute="centerX" secondItem="h1W-nJ-zd5" secondAttribute="centerX" id="7kR-qI-EqF"/>
-                            <constraint firstItem="eE7-h2-WCS" firstAttribute="top" secondItem="Mzy-JE-RDh" secondAttribute="bottom" constant="103" id="7u7-Ls-oRm"/>
                             <constraint firstItem="krt-za-tbN" firstAttribute="top" secondItem="Lgr-0a-2vs" secondAttribute="bottom" constant="40" id="BTs-HA-VIz"/>
                             <constraint firstItem="eE7-h2-WCS" firstAttribute="centerX" secondItem="h1W-nJ-zd5" secondAttribute="centerX" id="CRh-CI-Gfk"/>
                             <constraint firstItem="Lgr-0a-2vs" firstAttribute="centerX" secondItem="h1W-nJ-zd5" secondAttribute="centerX" id="Elw-qp-hGj"/>
-                            <constraint firstItem="Mzy-JE-RDh" firstAttribute="centerX" secondItem="h1W-nJ-zd5" secondAttribute="centerX" id="EuF-1i-EcN"/>
                             <constraint firstItem="krt-za-tbN" firstAttribute="centerX" secondItem="h1W-nJ-zd5" secondAttribute="centerX" id="FtK-NZ-AGm"/>
                             <constraint firstAttribute="trailing" secondItem="tqt-dA-acm" secondAttribute="trailing" id="Quv-bW-gYj"/>
-                            <constraint firstItem="m7b-A5-6zc" firstAttribute="centerX" secondItem="h1W-nJ-zd5" secondAttribute="centerX" id="WO0-Ns-ZRu"/>
-                            <constraint firstItem="Mzy-JE-RDh" firstAttribute="top" secondItem="m7b-A5-6zc" secondAttribute="bottom" constant="17.329999999999998" id="XVk-nZ-bOC"/>
+                            <constraint firstItem="eE7-h2-WCS" firstAttribute="top" secondItem="1M9-uE-SN2" secondAttribute="bottom" constant="94.329999999999998" id="UT5-uI-72H"/>
                             <constraint firstItem="yQK-92-XEz" firstAttribute="top" secondItem="krt-za-tbN" secondAttribute="bottom" constant="7.3300000000000001" id="ZYw-ao-zOo"/>
                             <constraint firstItem="Lgr-0a-2vs" firstAttribute="top" secondItem="tqt-dA-acm" secondAttribute="bottom" constant="61" id="axl-Es-zb3"/>
-                            <constraint firstItem="m7b-A5-6zc" firstAttribute="leading" secondItem="ONV-KL-Ggf" secondAttribute="leading" constant="113" id="bzE-W4-lOv"/>
                             <constraint firstItem="tqt-dA-acm" firstAttribute="top" secondItem="h1W-nJ-zd5" secondAttribute="top" constant="59" id="dks-NI-Yy0"/>
                             <constraint firstItem="tqt-dA-acm" firstAttribute="leading" secondItem="h1W-nJ-zd5" secondAttribute="leading" id="jba-XS-EcX"/>
-                            <constraint firstItem="m7b-A5-6zc" firstAttribute="top" secondItem="Lgr-0a-2vs" secondAttribute="bottom" constant="16" id="oFs-Nf-HOL"/>
-                            <constraint firstItem="m7b-A5-6zc" firstAttribute="top" secondItem="Lgr-0a-2vs" secondAttribute="bottom" constant="16" id="ugS-N1-gaS"/>
-                            <constraint firstItem="ONV-KL-Ggf" firstAttribute="trailing" secondItem="m7b-A5-6zc" secondAttribute="trailing" constant="112" id="xpt-AQ-gyr"/>
+                            <constraint firstItem="1M9-uE-SN2" firstAttribute="centerX" secondItem="h1W-nJ-zd5" secondAttribute="centerX" id="ooP-GB-ymr"/>
+                            <constraint firstItem="1M9-uE-SN2" firstAttribute="top" secondItem="Lgr-0a-2vs" secondAttribute="bottom" constant="154" id="u66-Bw-s7C"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" id="yK5-bh-RJl"/>
                     <connections>
                         <outlet property="addressLabelAccount" destination="yQK-92-XEz" id="dNK-Kg-Bc1"/>
                         <outlet property="fullNameLabelAccount" destination="krt-za-tbN" id="Wh4-v6-WSF"/>
-                        <outlet property="profileInfoTableView" destination="m7b-A5-6zc" id="mvL-pk-TJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsr-74-d0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1549,7 +1527,7 @@
         <!--Update Account View Controller-->
         <scene sceneID="SLI-Ye-xBY">
             <objects>
-                <viewController id="F5X-W9-ZsM" customClass="UpdateAccountViewController" customModule="Team11_MAPD714_Project_Milestone2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateAccountViewController" id="F5X-W9-ZsM" customClass="UpdateAccountViewController" customModule="Team11_MAPD714_Project_Milestone2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3CF-lz-fVq">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1621,6 +1599,7 @@
                             <constraint firstItem="iBV-UC-W5c" firstAttribute="centerX" secondItem="3CF-lz-fVq" secondAttribute="centerX" id="zG7-IP-vRE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Q11-AU-gPO"/>
                     <connections>
                         <outlet property="addressUpdateText" destination="owa-FI-pdS" id="GGX-KO-iu6"/>
                         <outlet property="changePasswordText" destination="eBd-kg-I4R" id="SgM-sz-R6Q"/>

@@ -27,13 +27,22 @@ class AccountTabViewController: UIViewController {
     @IBOutlet weak var addressLabelAccount: UILabel!
     //@IBOutlet weak var profileInfoTableView: UITableView!
 
-    // ClientsDBManager database instance
-    var clientsDBManager = ClientsDBManager()
-    var customersArray = [RegistrationDB]()
+//    // ClientsDBManager database instance
+//    var clientsDBManager = ClientsDBManager()
+//    var customersArray = [RegistrationDB]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+//    @IBAction func updateButtonContactClicked(_ sender: UIButton) {
+//        let dataSnd = self.storyboard?.instantiateViewController(withIdentifier: "UpdateAccountViewController") as! UpdateAccountViewController
+//     
+//        
+//        present(dataSnd,animated: true)}
+        
+    
+    
     }
 
     
