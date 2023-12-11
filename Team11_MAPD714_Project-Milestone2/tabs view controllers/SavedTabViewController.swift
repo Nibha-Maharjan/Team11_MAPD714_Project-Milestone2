@@ -27,33 +27,43 @@ import WebKit
 
 class SavedTabViewController: UIViewController {
 
-    //define a webview control object
-    let wview = WKWebView()
-    
-    
+    // MARK: - Properties
+    /// Define a WKWebView control object
+    let webView = WKWebView()
+
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //add the object into view
-        view.addSubview(wview)
-        
-        //define the url object with the website/domaain name
-        guard let url = URL(string: "https://www.cruisetraveloutlet.com/blog/best-cruise-destinations-in-the-world/")
-        else{
+
+        // Add the webView to the view
+        view.addSubview(webView)
+
+        // Define the URL object with the website/domain name
+        guard let url = URL(string: "https://www.cruisetraveloutlet.com/blog/best-cruise-destinations-in-the-world/") else {
             return
         }
-        
-        //load the url into web view control
-        wview.load(URLRequest(url: url))
-        
-        
+
+        // Load the URL into the webView control
+        webView.load(URLRequest(url: url))
     }
-    
-    //initializing web view to the screen
+
+    // MARK: - Layout
+    // Initializing webView to the screen with specific padding
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        wview.frame = view.bounds
+
+        // Define padding values for the top and bottom of the webView
+        let topPadding: CGFloat = 90
+        
+        let bottomPadding: CGFloat = 100
+
+        // Set the frame of the webView with specified padding
+        webView.frame = CGRect(
+            x: 0,
+            y: topPadding,
+            width: view.bounds.width,
+            height: view.bounds.height - topPadding - bottomPadding
+        )
     }
-
-
 }
+

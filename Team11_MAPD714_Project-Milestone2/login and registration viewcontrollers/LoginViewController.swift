@@ -57,7 +57,8 @@ class LoginViewController: UIViewController {
 
             // User authentication successful then Navigating to the home screen
             let control = storyboard?.instantiateViewController(withIdentifier: "tabview") as! UITabBarController
-            present(control, animated: true)
+            //present(control, animated: true)
+            self.navigationController?.pushViewController(control, animated: true)
             
             
             

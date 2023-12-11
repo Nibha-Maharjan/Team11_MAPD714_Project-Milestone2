@@ -21,92 +21,118 @@ class PassengerCountViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var numberTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var ifSeniorSwitch: UISwitch!
+    @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var numberTextField2: UITextField!
-    @IBOutlet weak var cruiseSelectedPassengerCountLbl: UILabel!
-    @IBOutlet weak var cruisesIndivPrice: UILabel!
-    @IBOutlet weak var datePickerBooking: UIDatePicker!
-    @IBOutlet weak var dateLbl: UILabel!
-    @IBOutlet weak var ifSeniorLbl: UILabel!
-    @IBOutlet weak var numKidsLbl: UILabel!
-    @IBOutlet weak var numAdultLbl: UILabel!
+    @IBOutlet weak var totalPriceCruise: UILabel!
+    @IBOutlet weak var adultCal: UILabel!
+    @IBOutlet weak var childCal: UILabel!
 
     // MARK: - Properties
 
-    var CruiseLbldata = ""
-    var CruisePrice = ""
+    var selectedCruise: DetailsCruise?
+    var selectedDate: String?
 
-    // MARK: - View Lifecycle
+    // MARK: - Lifecycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Set initial values and delegates
-        setupUI()
-
-        // Set up date picker value changed event
-        datePickerBooking.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
+        setupInitialView()
+        setupTargets()
     }
 
-    // MARK: - UI Setup
+    // MARK: - Setup Functions
 
-    private func setupUI() {
-        cruiseSelectedPassengerCountLbl.text = "You have selected:  \(CruiseLbldata)"
-        cruisesIndivPrice.text = " \(CruisePrice)"
-        numberTextField.delegate = self
-        numberTextField2.delegate = self
+    private func setupInitialView() {
+        ifSeniorSwitch.isOn = false
+        datePicker.datePickerMode = .date
+        datePicker.date = Date() // Set to today's date
+
+        formatDateAndSetSelectedDate()
+        updateTotalPrice()
     }
 
-    // MARK: - Text Field Delegate
-
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // For mobile number validation
-        let allowedCharacters = CharacterSet(charactersIn: "+0123456789 ") // Change this based on your requirement
-        let characterSet = CharacterSet(charactersIn: string)
-        return allowedCharacters.isSuperset(of: characterSet)
+    private func setupTargets() {
+        datePicker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
+        numberTextField.addTarget(self, action: #selector(passengerCountChanged(_:)), for: .editingChanged)
+        numberTextField2.addTarget(self, action: #selector(passengerCountChanged(_:)), for: .editingChanged)
     }
 
-    // MARK: - Date Picker Handling
+    // MARK: - Actions
 
-    @objc func datePickerValueChanged(_ sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-
-        dateLbl.text = "Selected Date: \(dateFormatter.string(from: sender.date))"
+    @objc private func passengerCountChanged(_ textField: UITextField) {
+        updateTotalPrice()
     }
 
-    // MARK: - Button Actions
+    @objc private func datePickerChanged(picker: UIDatePicker) {
+        formatDateAndSetSelectedDate()
+    }
 
-    @IBAction func buttonClickedPersonCountNext(_ sender: UIButton) {
-        let a = Int(numberTextField.text!) ?? 0
-        let b = Int(numberTextField2.text!) ?? 0
-        let totalGuest = a + b
-        
-        let totalPrice = totalGuest * (Int(CruisePrice) ?? 0)
-        
-        // Update UI labels
-        numAdultLbl.text = "Number of Adults: \(a)"
-        numKidsLbl.text = "Number of Kids: \(b)"
-        ifSeniorLbl.text = ifSeniorSwitch.isOn ? "Senior Citizen on board" : "No Senior Citizen on board"
+    private func updateTotalPrice() {
+        let adultCount = calculateTotal(count: numberTextField.text ?? "0", price: selectedCruise?.cruisePrice)
+        let childCount = calculateTotal(count: numberTextField2.text ?? "0", price: selectedCruise?.cruisePrice)
 
-        // Navigate to PaymentViewController
-        navigateToPayment(totalGuest: totalGuest, totalPrice: totalPrice)
+        adultCal.text = "\(selectedCruise?.cruisePrice ?? "0") * \(numberTextField.text ?? "0") = \(adultCount)"
+        childCal.text = "\(selectedCruise?.cruisePrice ?? "0") * \(numberTextField2.text ?? "0") = \(childCount)"
+        totalPriceCruise.text = String(childCount + adultCount)
+    }
+
+    private func calculateTotal(count: String, price: String?) -> Int {
+        let countInt = Int(count) ?? 0
+        let priceInt = Int(price ?? "0") ?? 0
+        return countInt * priceInt
     }
 
     // MARK: - Navigation
 
-    private func navigateToPayment(totalGuest: Int, totalPrice: Int) {
-        let control = storyboard?.instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
+    @IBAction func buttonClickedPersonCountNext(_ sender: UIButton) {
+        if isValidForNavigation() {
+            navigateToPayment()
+        } else {
+            showAlert(message: "Please enter the number of adults or children.")
+        }
+    }
 
-        // Pass data from the first view to the second view
-        control.NoGuest = String(totalGuest)
-        control.CruisePriceTotal = String(totalPrice)
+    // MARK: - Helper Functions
 
-        present(control, animated: true)
+    private func formatDateAndSetSelectedDate() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        selectedDate = dateFormatter.string(from: datePicker.date)
+    }
+
+    private func isValidForNavigation() -> Bool {
+        let adultCountValue = Int(numberTextField.text ?? "0") ?? 0
+        let childCountValue = Int(numberTextField2.text ?? "0") ?? 0
+        return adultCountValue > 0 || childCountValue > 0
+    }
+
+    private func navigateToPayment() {
+        let storyboard = UIStoryboard(name:"Main", bundle:nil)
+        let toPayment = storyboard.instantiateViewController(withIdentifier: "toPaymentViewController") as! toPaymentViewController
+        toPayment.modalPresentationStyle = .fullScreen
+        toPayment.selectedCruise = selectedCruise
+        let adultCountValue = Int(numberTextField.text ?? "0") ?? 0
+        let childCountValue = Int(numberTextField2.text ?? "0") ?? 0
+        let defaults = UserDefaults.standard
+
+        defaults.set(selectedDate, forKey: "date")
+        defaults.set(ifSeniorSwitch.isOn, forKey: "seniorCitizenBoarding")
+        defaults.set(adultCountValue, forKey: "adultCount")
+        defaults.set(childCountValue, forKey: "childCount")
+        defaults.set(totalPriceCruise.text, forKey: "totalPrice")
+        self.navigationController?.pushViewController(toPayment, animated: true)
+    }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
     }
 }
+
+
 
 
     

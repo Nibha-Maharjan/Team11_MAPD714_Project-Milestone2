@@ -21,136 +21,121 @@
 
 
 
-//import UIKit
-//
-//class SearchTabViewController: UIViewController {
-//    
-////    // Dummy cruise data
-////        var cruiseData: [Cruise] = [
-////            Cruise(name: "Bahamas Cruise", destination: "Nassau, Bahamas", pickupLocation: "Miami, FL", price: 1200.0, numberOfNights: 7),
-////            Cruise(name: "Caribbean Cruise", destination: "St. Thomas, Barbados, Antigua", pickupLocation: "Miami, FL", price: 1500.0, numberOfNights: 10),
-////            Cruise(name: "Cuba Cruise", destination: "Havana, Cuba", pickupLocation: "Tampa, FL", price: 900.0, numberOfNights: 5),
-////            Cruise(name: "Sampler Cruise", destination: "Cozumel, Mexico", pickupLocation: "Galveston, TX", price: 800.0, numberOfNights: 4),
-////            Cruise(name: "Star Cruise", destination: "Port Canaveral, FL", pickupLocation: "Orlando, FL", price: 700.0, numberOfNights: 3)
-////        ]
-//    
-//    //dummy cruise data list
-//    
-//    var cruiseData = ["Bahamas Cruise", "Carribean Cruise", "Cuba Cruise", "Sampler Cruise", "Star Cruise"]
-//    
-//    var filteredData: [String]!
-//    
-//    // UI elements
-//    
-//    @IBOutlet weak var searchCruise: UISearchBar!
-//    
-//    @IBOutlet weak var tableCruise: UITableView!
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        
-//        tableCruise.delegate = self
-//        tableCruise.dataSource = self
-//        searchCruise.delegate = self
-//
-//        filteredData = cruiseData
-//    }
-//    
-//
-//
-//}
-//
-//extension SearchTabViewController: UITableViewDelegate, UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return filteredData.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = filteredData[indexPath.row]
-//        return cell
-//    }
-//    
-//    
-//    
-//}
-//
-//extension SearchTabViewController: UISearchBarDelegate{
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        filteredData = []
-//        
-//        for word in cruiseData{
-//            if word.uppercased().contains(searchText.uppercased()){
-//                filteredData.append(word)
-//            }
-//        }
-//        self.tableCruise.reloadData()
-//    }
-//}
-
-
-
 import UIKit
 
-class SearchTabViewController: UIViewController {
-  
-    // Cruise database manager
-    let cruiseDBManager = CruiseInfoDBManager()
-    
-    // Array to store cruise data
-    var cruiseData: [CruiseDB] = []
-    
-    // Filtered cruise data for search
-    var filteredData: [CruiseDB] = []
-    
-    // UI elements
-    @IBOutlet weak var searchCruise: UISearchBar!
-    @IBOutlet weak var tableCruise: UITableView!
-    
-    
-    
+class SearchTabViewController: UIViewController, UICollectionViewDataSource, UISearchBarDelegate {
+
+    // MARK: - Structs
+
+    /// Codable struct representing the API response.
+    struct APIResponse: Codable {
+        let total: Int
+        let total_pages: Int
+        let results: [Result]
+    }
+
+    /// Codable struct representing individual results in the API response.
+    struct Result: Codable {
+        let id: String
+        let urls: URLS
+    }
+
+    /// Codable struct representing the URLs for images in the API response.
+    struct URLS: Codable {
+        let regular: String
+    }
+
+    // MARK: - Properties
+
+    private var collectionView: UICollectionView?
+    var results: [Result] = []
+    let searchBar = UISearchBar()
+
+    // MARK: - View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableCruise.delegate = self
-        tableCruise.dataSource = self
-        searchCruise.delegate = self
-        
-        //  insert cruise data
-        cruiseDBManager.insert(cruiseID: 1, cruiseName: "Bahamas Cruise", cruisePrice: 1200)
-        cruiseDBManager.insert(cruiseID: 2, cruiseName: "Caribbean Cruise", cruisePrice: 1500)
-        cruiseDBManager.insert(cruiseID: 3, cruiseName: "Cuba Cruise", cruisePrice: 900)
-        cruiseDBManager.insert(cruiseID: 4, cruiseName: "Sampler Cruise", cruisePrice: 800)
-        cruiseDBManager.insert(cruiseID: 5, cruiseName: "Star Cruise", cruisePrice: 700)
-        
-        
-        // Load cruise data from the database
-        cruiseData = cruiseDBManager.readCruises()
-        filteredData = cruiseData
-    }
-}
 
-extension SearchTabViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData.count
+        // Set up the search bar
+        searchBar.delegate = self
+        view.addSubview(searchBar)
+
+        // Set up the collection view
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize = CGSize(width: view.frame.size.width / 2, height: view.frame.size.width / 2)
+        view.addSubview(collectionView)
+        self.collectionView = collectionView
+
+        // Register the custom cell for the collection view
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
+        collectionView.dataSource = self
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = filteredData[indexPath.row].cruiseName
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Set the frames for search bar and collection view, considering a 60-point space above the bottom
+        searchBar.frame = CGRect(x: 10, y: view.safeAreaInsets.top, width: view.frame.size.width - 20, height: 50)
+        collectionView?.frame = CGRect(x: 0, y: view.safeAreaInsets.top + 55, width: view.frame.size.width, height: view.frame.size.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom - 55 - 60)
+    }
+
+    // MARK: - UISearchBarDelegate
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if let text = searchBar.text {
+            results = []
+            collectionView?.reloadData()
+            fetchPhotos(query: text)
+        }
+    }
+
+    // MARK: - Networking
+
+    /// Fetch photos from the Unsplash API based on the provided query.
+    func fetchPhotos(query: String) {
+        let urlString = "https://api.unsplash.com/search/photos?page=1&query=\(query)&client_id=OI9y4AdDmxkenqAS9Bs1Wo0mt3SllepkMc5CEldA96c"
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+
+            do {
+                let jsonResult = try JSONDecoder().decode(APIResponse.self, from: data)
+                DispatchQueue.main.async {
+                    self?.results = jsonResult.results
+                    self?.collectionView?.reloadData()
+                }
+            } catch {
+                print(error)
+            }
+        }
+
+        task.resume()
+    }
+
+    // MARK: - UICollectionViewDataSource
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return results.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let imageURLString = results[indexPath.row].urls.regular
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath) as? ImageCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.configure(with: imageURLString)
+
         return cell
     }
-    
-    
-
 }
 
-extension SearchTabViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredData = cruiseData.filter { cruise in
-            return cruise.cruiseName.uppercased().contains(searchText.uppercased())
-        }
-        self.tableCruise.reloadData()
-    }
-}
+

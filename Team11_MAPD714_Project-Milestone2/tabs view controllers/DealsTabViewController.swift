@@ -23,149 +23,91 @@
 
 // manage the deals
 
-
 import UIKit
 
 class DealsTabViewController: UIViewController {
 
-    
+    // MARK: - Outlets
+
     @IBOutlet weak var tableViewCruiseDeals: UITableView!
-    
-//    // Define a custom struct for Cruise data
-//    struct Cruise {
-//        var name: String
-//        var destination: String
-//        var pickupLocation: String
-//        var price: Double
-//        var numberOfNights: Int
-//    }
-//    
-//    // Create an array of Cruise data
-//    var cruiseData: [Cruise] = [
-//        Cruise(name: "Bahamas Cruise", destination: "Nassau, Bahamas", pickupLocation: "Miami, FL", price: 1200.0, numberOfNights: 7),
-//        Cruise(name: "Caribbean Cruise", destination: "St. Thomas, Barbados, Antigua", pickupLocation: "Miami, FL", price: 1500.0, numberOfNights: 10),
-//        Cruise(name: "Cuba Cruise", destination: "Havana, Cuba", pickupLocation: "Tampa, FL", price: 900.0, numberOfNights: 5),
-//        Cruise(name: "Sampler Cruise", destination: "Cozumel, Mexico", pickupLocation: "Galveston, TX", price: 800.0, numberOfNights: 4),
-//        Cruise(name: "Star Cruise", destination: "Port Canaveral, FL", pickupLocation: "Orlando, FL", price: 700.0, numberOfNights: 3)
-//    ]
-    
-    
-    //arrays for the cruise datas
-    let cruises = ["Star Cruise",
-                   "Sampler Cruise",
-                   "Cuba Cruise",
-                   "Bahamas Cruise",
-                   "Caribbean Cruise"]
-    
-    let cruisesPhotos = ["StarFeatured",
-                         "SamplerFeatured",
-                         "CubaFeatured",
-                         "BahamasFeatured",
-                         "CaribbeanFeatured"]
-    
-    let cruisesInfos = ["3 Nights in the luxurious Star Cruise",
-                        "4 Nights in the luxurious Sampler Cruise",
-                        "5 Nights in the luxurious Cuba Cruise",
-                        "7 Nights in the luxurious Bahamas Cruise",
-                        "10 Nights in the luxurious Caribbean Cruise"]
-    
-    let cruisesDestinations = ["Orlando, FL to Port Canaveral, FL",
-                               "Galveston, TX to Cozumel, Mexico",
-                               "Tampa, FL to Havana, Cuba",
-                               "Miami, FL to Nassau, Bahamas",
-                               "Miami, FL to St. Thomas, Barbados, Antigua"]
-    
-    let cruisesPrices = ["$700",
-                         "$800",
-                         "$900",
-                         "$1200",
-                         "$1500"]
-    
-    let personCount = ["*per person","*per person","*per person","*per person","*per person"]
-    
-    let topDealsNoteRight = ["Top Deals Guaranteed", "Top Deals Guaranteed", "Top Deals Guaranteed", "Top Deals Guaranteed", "Top Deals Guaranteed"]
-    
+
+    // MARK: - Properties
+
+    // Array of DetailsCruise objects initialized with data from CruiseData
+    let dealsArray: [DetailsCruise] = CruiseData.allCruises.map { decCruise in
+        return DetailsCruise(
+            cruiseTitle: decCruise.cruiseTitle,
+            cruiseImage: decCruise.cruiseImage,
+            cruiseDescription: decCruise.cruiseDescription,
+            cruiseDuration: decCruise.cruiseDuration,
+            visitingPlaces: decCruise.visitingPlaces,
+            cruisePrice: decCruise.cruisePrice
+        )
+    }
+
+    // Computed property to get sorted deals by price
+    var sortedDeals: [DetailsCruise] {
+        return dealsArray.sorted(by: { $0.cruisePrice < $1.cruisePrice })
+    }
+
+    // MARK: - View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Set delegate and data source for the table view
         tableViewCruiseDeals.delegate = self
         tableViewCruiseDeals.dataSource = self
     }
-    
 }
 
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        tableViewCruiseDeals?.dataSource = self
-//    }
-    
-//extension for view controller to implement table view
-extension DealsTabViewController: UITableViewDelegate, UITableViewDataSource{
-    
-    //custom cell height
+// MARK: - Table View Delegate and Data Source
+
+extension DealsTabViewController: UITableViewDelegate, UITableViewDataSource {
+
+    // MARK: - Table View Delegate Methods
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 480
     }
-    
-    //number of rows
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cruises.count
-    }
-    
-    //data to be passed in custom cells
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableViewCruiseDeals.dequeueReusableCell(withIdentifier: "cellDeals") as! CustomDealsTableViewCell
-        
-        //getting the outlets from CustomTableViewCell class file and passing array data into it
-        let DealsCruisePhoto_ = cruisesPhotos[indexPath.row]
-        cell.dealsCruiseImg.image = UIImage(named: DealsCruisePhoto_)
-        
-        
-        let dealsCruiseNames_ = cruises[indexPath.row]
-        cell.dealsCruiseName.text = dealsCruiseNames_
 
-        
-        let dealsCruiseInfo_ = cruisesInfos[indexPath.row]
-        cell.dealsCruiseDescription.text = dealsCruiseInfo_
-        
-        let dealsCruiseDestinations_ = cruisesDestinations[indexPath.row]
-        cell.dealsCruiseDestination.text = dealsCruiseDestinations_
-        
-        let dealsCruisePrices_ = cruisesPrices[indexPath.row]
-        cell.dealsCruisePrice.text = dealsCruisePrices_
-        
-        let dealsPersonCounts_ = personCount[indexPath.row]
-        cell.dealsPerPersonNote.text = dealsPersonCounts_
-        
-        let dealstop = topDealsNoteRight[indexPath.row]
-        cell.topDealsNote.text = dealstop
-        
-        return cell
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sortedDeals.count
     }
-    
-    
-    //onselect function for the custom cells
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var segueIdentifier = String()
-        switch indexPath.row{
-        
-        case 0:
-            segueIdentifier = "dealsShowStar"
-            
-        case 1:
-            segueIdentifier = "dealsShowSampler"
-            
-        case 2:
-            segueIdentifier = "dealsShowCuba"
-            
-        case 3:
-            segueIdentifier = "dealsShowBahamas"
-            
-        default:
-            segueIdentifier = "dealsShowCaribbean"
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Use optional binding to safely check if the cell can be dequeued
+        if let cell = tableViewCruiseDeals.dequeueReusableCell(withIdentifier: "cellDeals") as? CustomDealsTableViewCell {
+            let deal = sortedDeals[indexPath.row]
+
+            // Populate the cell with data from the DetailsCruise object
+            cell.dealsCruiseImg.image = UIImage(named: deal.cruiseImage)
+            cell.dealsCruiseName.text = deal.cruiseTitle
+            cell.dealsCruiseDescription.text = deal.cruiseDescription
+            cell.dealsCruiseDestination.text = deal.visitingPlaces
+            cell.dealsCruisePrice.text = "$" + deal.cruisePrice
+            cell.dealsPerPersonNote.text = "*per person"
+
+            return cell
+        } else {
+            // Return a default cell or handle the error in an appropriate way
+            return UITableViewCell()
         }
-        self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Retrieve the selected DetailsCruise object
+        let selectedCruise = sortedDeals[indexPath.row]
+
+        // Instantiate the selCruiseViewController and pass the selected cruise
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let selCruiseViewController = storyboard.instantiateViewController(withIdentifier: "selCruiseViewController") as! selCruiseViewController
+        selCruiseViewController.selectedCruise = selectedCruise
+
+        // Push the selectedCruiseViewController to the navigation stack
+        self.navigationController?.pushViewController(selCruiseViewController, animated: true)
+    }
 }
+
+
+

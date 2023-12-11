@@ -39,6 +39,14 @@
 		E0AA76822AF021CE0022613A /* SavedTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AA76812AF021CE0022613A /* SavedTabViewController.swift */; };
 		E0AA76842AF021DC0022613A /* AccountTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AA76832AF021DC0022613A /* AccountTabViewController.swift */; };
 		E0AA76862AF02FE90022613A /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AA76852AF02FE90022613A /* ContactUsViewController.swift */; };
+		E0E1043F2B2390FA001618F8 /* DetailsCruise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1043E2B2390FA001618F8 /* DetailsCruise.swift */; };
+		E0E104412B23911E001618F8 /* DecCruise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E104402B23911E001618F8 /* DecCruise.swift */; };
+		E0E104432B23FB56001618F8 /* selCruiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E104422B23FB56001618F8 /* selCruiseViewController.swift */; };
+		E0E104452B23FE7B001618F8 /* CruiseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E104442B23FE7B001618F8 /* CruiseCollectionViewCell.swift */; };
+		E0E104472B252986001618F8 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E104462B252986001618F8 /* ImageCollectionViewCell.swift */; };
+		E0E104492B267108001618F8 /* toPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E104482B267108001618F8 /* toPaymentViewController.swift */; };
+		E0E1044B2B26885C001618F8 /* BookingCompletedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1044A2B26885C001618F8 /* BookingCompletedTableViewCell.swift */; };
+		E0E1044D2B26A108001618F8 /* AccountBookingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1044C2B26A108001618F8 /* AccountBookingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +84,14 @@
 		E0AA76812AF021CE0022613A /* SavedTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTabViewController.swift; sourceTree = "<group>"; };
 		E0AA76832AF021DC0022613A /* AccountTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTabViewController.swift; sourceTree = "<group>"; };
 		E0AA76852AF02FE90022613A /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		E0E1043E2B2390FA001618F8 /* DetailsCruise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCruise.swift; sourceTree = "<group>"; };
+		E0E104402B23911E001618F8 /* DecCruise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecCruise.swift; sourceTree = "<group>"; };
+		E0E104422B23FB56001618F8 /* selCruiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selCruiseViewController.swift; sourceTree = "<group>"; };
+		E0E104442B23FE7B001618F8 /* CruiseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0E104462B252986001618F8 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0E104482B267108001618F8 /* toPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toPaymentViewController.swift; sourceTree = "<group>"; };
+		E0E1044A2B26885C001618F8 /* BookingCompletedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCompletedTableViewCell.swift; sourceTree = "<group>"; };
+		E0E1044C2B26A108001618F8 /* AccountBookingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBookingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +133,7 @@
 				E08561F12B0BB5E2008BB70E /* tabs view controllers */,
 				E08561F42B0BB6AB008BB70E /* Cruises ViewControllers */,
 				E08561F52B0BB6D3008BB70E /* Connected ViewControllers */,
-				E08561F32B0BB687008BB70E /* custom tableViews */,
+				E08561F32B0BB687008BB70E /* custom Views for table and collection */,
 				E025E2B72B018F7B00BE92D2 /* Main.storyboard */,
 				E05FF7C72AEEAF240038EB5A /* LaunchScreen.storyboard */,
 				E05FF7C52AEEAF240038EB5A /* Assets.xcassets */,
@@ -143,7 +159,6 @@
 				E0AA767D2AF021570022613A /* DealsTabViewController.swift */,
 				E0AA767F2AF021670022613A /* SearchTabViewController.swift */,
 				E0AA76812AF021CE0022613A /* SavedTabViewController.swift */,
-				E0AA76832AF021DC0022613A /* AccountTabViewController.swift */,
 			);
 			path = "tabs view controllers";
 			sourceTree = "<group>";
@@ -157,23 +172,23 @@
 			path = "login and registration viewcontrollers";
 			sourceTree = "<group>";
 		};
-		E08561F32B0BB687008BB70E /* custom tableViews */ = {
+		E08561F32B0BB687008BB70E /* custom Views for table and collection */ = {
 			isa = PBXGroup;
 			children = (
 				E025E29F2B00686800BE92D2 /* CustomTableViewCell.swift */,
 				E025E2A12B01651A00BE92D2 /* CustomDealsTableViewCell.swift */,
+				E0E104442B23FE7B001618F8 /* CruiseCollectionViewCell.swift */,
+				E0E104462B252986001618F8 /* ImageCollectionViewCell.swift */,
+				E0E1044A2B26885C001618F8 /* BookingCompletedTableViewCell.swift */,
+				E0E1044C2B26A108001618F8 /* AccountBookingTableViewCell.swift */,
 			);
-			path = "custom tableViews";
+			path = "custom Views for table and collection";
 			sourceTree = "<group>";
 		};
 		E08561F42B0BB6AB008BB70E /* Cruises ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E025E2A32B01773500BE92D2 /* BahamasViewController.swift */,
-				E025E2A52B01774A00BE92D2 /* CaribbeanViewController.swift */,
-				E025E2A72B01776000BE92D2 /* CubaViewController.swift */,
-				E025E2A92B01776E00BE92D2 /* SamplerViewController.swift */,
-				E025E2AB2B01777C00BE92D2 /* StarViewController.swift */,
+				E0E104422B23FB56001618F8 /* selCruiseViewController.swift */,
 			);
 			path = "Cruises ViewControllers";
 			sourceTree = "<group>";
@@ -181,11 +196,9 @@
 		E08561F52B0BB6D3008BB70E /* Connected ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E0AA76852AF02FE90022613A /* ContactUsViewController.swift */,
 				E025E2B92B01C84500BE92D2 /* PassengerCountViewController.swift */,
-				E025E2BB2B01C87700BE92D2 /* PaymentViewController.swift */,
+				E0E104482B267108001618F8 /* toPaymentViewController.swift */,
 				E025E2BD2B01C8A300BE92D2 /* OutputViewController.swift */,
-				E08562222B180540008BB70E /* UpdateAccountViewController.swift */,
 			);
 			path = "Connected ViewControllers";
 			sourceTree = "<group>";
@@ -201,6 +214,7 @@
 		E08562132B1265B1008BB70E /* database */ = {
 			isa = PBXGroup;
 			children = (
+				E0E1043D2B239044001618F8 /* Cruise Info */,
 				E08562162B126C40008BB70E /* RegistrationDB.swift */,
 				E08562182B12720F008BB70E /* ClientsDBManager.swift */,
 				E085621E2B17B9E2008BB70E /* CruiseInfoDB.swift */,
@@ -214,8 +228,26 @@
 		E08562242B1946FA008BB70E /* backup */ = {
 			isa = PBXGroup;
 			children = (
+				E0AA76832AF021DC0022613A /* AccountTabViewController.swift */,
+				E025E2BB2B01C87700BE92D2 /* PaymentViewController.swift */,
+				E0AA76852AF02FE90022613A /* ContactUsViewController.swift */,
+				E025E2A32B01773500BE92D2 /* BahamasViewController.swift */,
+				E025E2A52B01774A00BE92D2 /* CaribbeanViewController.swift */,
+				E025E2A72B01776000BE92D2 /* CubaViewController.swift */,
+				E025E2A92B01776E00BE92D2 /* SamplerViewController.swift */,
+				E025E2AB2B01777C00BE92D2 /* StarViewController.swift */,
+				E08562222B180540008BB70E /* UpdateAccountViewController.swift */,
 			);
 			path = backup;
+			sourceTree = "<group>";
+		};
+		E0E1043D2B239044001618F8 /* Cruise Info */ = {
+			isa = PBXGroup;
+			children = (
+				E0E104402B23911E001618F8 /* DecCruise.swift */,
+				E0E1043E2B2390FA001618F8 /* DetailsCruise.swift */,
+			);
+			path = "Cruise Info";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,17 +323,24 @@
 			files = (
 				E05FF7D52AEEB8D90038EB5A /* RegistrationViewController.swift in Sources */,
 				E085621B2B155EC5008BB70E /* BookingDB.swift in Sources */,
+				E0E1044B2B26885C001618F8 /* BookingCompletedTableViewCell.swift in Sources */,
 				E05FF7C12AEEAF210038EB5A /* ViewController.swift in Sources */,
 				E074CD192B1A9817005A2193 /* BookingDBManager.swift in Sources */,
+				E0E104492B267108001618F8 /* toPaymentViewController.swift in Sources */,
 				E025E2A22B01651A00BE92D2 /* CustomDealsTableViewCell.swift in Sources */,
 				E025E2AA2B01776E00BE92D2 /* SamplerViewController.swift in Sources */,
 				E08562232B180540008BB70E /* UpdateAccountViewController.swift in Sources */,
+				E0E1043F2B2390FA001618F8 /* DetailsCruise.swift in Sources */,
 				E05FF7BD2AEEAF210038EB5A /* AppDelegate.swift in Sources */,
 				E05FF7BF2AEEAF210038EB5A /* SceneDelegate.swift in Sources */,
+				E0E104432B23FB56001618F8 /* selCruiseViewController.swift in Sources */,
+				E0E104452B23FE7B001618F8 /* CruiseCollectionViewCell.swift in Sources */,
+				E0E104472B252986001618F8 /* ImageCollectionViewCell.swift in Sources */,
 				E05FF7D32AEEB8C90038EB5A /* LoginViewController.swift in Sources */,
 				E025E2BE2B01C8A300BE92D2 /* OutputViewController.swift in Sources */,
 				E025E2BC2B01C87700BE92D2 /* PaymentViewController.swift in Sources */,
 				E08562212B17BA3F008BB70E /* CruiseInfoDBManager.swift in Sources */,
+				E0E1044D2B26A108001618F8 /* AccountBookingTableViewCell.swift in Sources */,
 				E0AA767E2AF021570022613A /* DealsTabViewController.swift in Sources */,
 				E025E2A02B00686800BE92D2 /* CustomTableViewCell.swift in Sources */,
 				E085621F2B17B9E2008BB70E /* CruiseInfoDB.swift in Sources */,
@@ -313,6 +352,7 @@
 				E025E2A42B01773500BE92D2 /* BahamasViewController.swift in Sources */,
 				E025E2A82B01776000BE92D2 /* CubaViewController.swift in Sources */,
 				E025E2BA2B01C84500BE92D2 /* PassengerCountViewController.swift in Sources */,
+				E0E104412B23911E001618F8 /* DecCruise.swift in Sources */,
 				E08562172B126C40008BB70E /* RegistrationDB.swift in Sources */,
 				E0AA76862AF02FE90022613A /* ContactUsViewController.swift in Sources */,
 				E025E2AC2B01777C00BE92D2 /* StarViewController.swift in Sources */,

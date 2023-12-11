@@ -8,40 +8,42 @@
 import Foundation
 
 class BookingDB {
-    
-    var bookingID: Int
-    var cruiseType: String
-    var cruiseDate: String
-    var cruiseAdults: Int
-    var cruiseKids: Int
-    var cruiseSeniors: String
-    var cruiseNights: Int
+    var id: String
+    var userId: Int
+    var cruiseName: String
+    var cruiseDescription: String
+    var cruiseVisitingPlaces: String
+    var cruiseDuration: String 
     var cruisePriceBooking: Int
-    var cruisePriceBookingTotal: Int
-    
-    
-    
-    init(
-        bookingID: Int,
-         cruiseType: String,
-         cruiseDate: String,
-         cruiseAdults: Int,
-         cruiseKids: Int,
-         cruiseSeniors: String,
-         cruiseNights: Int,
-         cruisePriceBooking: Int,
-         cruisePriceBookingTotal: Int) {
-        
-        
-        self.bookingID = bookingID
-        self.cruiseType = cruiseType
-        self.cruiseDate = cruiseDate
-        self.cruiseAdults = cruiseAdults
-        self.cruiseKids = cruiseKids
-        self.cruiseSeniors = cruiseSeniors
-        self.cruiseNights = cruiseNights
+    var cruiseAdultCount: String
+    var cruiseChildCount: String
+    var cruiseBookingDate: String
+    var cruiseSeniorCitizen: Bool
+    var cruiseTotalPrice: String
+    var contactNumber: String
+    var fullname: String
+    var address: String
+    var city: String
+    var country: String
+
+    init(id: String, userId: Int, cruiseName: String, cruiseDescription: String, cruiseVisitingPlaces: String, cruiseDuration: String, cruisePriceBooking: Int, cruiseAdultCount: String, cruiseChildCount: String, cruiseBookingDate: String, cruiseSeniorCitizen: Bool, cruiseTotalPrice: String, contactNumber: String, fullname: String, address: String, city: String, country: String) {
+        self.id = id
+        self.userId = userId
+        self.cruiseName = cruiseName
+        self.cruiseDescription = cruiseDescription
+        self.cruiseVisitingPlaces = cruiseVisitingPlaces
+        self.cruiseDuration = cruiseDuration
         self.cruisePriceBooking = cruisePriceBooking
-        self.cruisePriceBookingTotal = cruisePriceBookingTotal
+        self.cruiseAdultCount = cruiseAdultCount
+        self.cruiseChildCount = cruiseChildCount
+        self.cruiseBookingDate = cruiseBookingDate
+        self.cruiseSeniorCitizen = cruiseSeniorCitizen
+        self.cruiseTotalPrice = cruiseTotalPrice
+        self.contactNumber = contactNumber
+        self.fullname = fullname
+        self.address = address
+        self.city = city
+        self.country = country
     }
 }
 
